@@ -1,0 +1,43 @@
+.infoGeral {
+  font-size: $familiaFonte;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    h4 {
+      @include estiloFonte($cor: #666);
+      margin: 15px 0 0;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    li {
+      a {
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 3px;
+        @include ellipsis;
+        @include estiloFonte($cor: $corFontePrincipal, $entrelinhas: 16px);
+
+        &:before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+          background-image: url("../img/defaultIcon.png");
+        }
+
+        &:hover {
+          background-color: $corFontePrincipal;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}

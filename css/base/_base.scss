@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $corFundo;
+    font-family: $familiaFonte;
+}
+
+// topPage botão tema
+.topPage-theme{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    z-index: 9;
+    width: 35px;
+    font-size: 15px;
+    color: #FFF;
+    line-height: .5;
+    background: $corBase;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    @include translate3D(0, 50px, 0);
+    @extend %transition;
+
+    &:after {
+        font-family: Icons;
+        color: #fff;
+        text-align: center;
+        content: "";
+    }
+
+    &:hover {
+        background: $corHoverPrincipal;
+        @extend %transition;
+    }
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    &.topPage-visible {
+        visibility: visible;
+        opacity: .6;
+        @include translate3D(0, 0, 0);
+        @extend %transition;
+
+        &:hover {
+            opacity: 1;
+            @extend %transition;
+        }
+    }
+
+    &.topPage-fade-out {
+        opacity: .4;
+
+        &:hover {
+            opacity: 1;
+            @extend %transition;
+        }
+    }
+}
+// topPage botão tema final
